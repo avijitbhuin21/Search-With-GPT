@@ -104,7 +104,7 @@ def perform_image_search(query: str) -> List[Dict[str, Any]]:
             for j in i:
                 if "https://" in str(i[j]):
                     for m in i[j]:
-                        if m and "https://" in m:
+                        if m and not isinstance(m, int) and "https://" in m:
                             dj['description'] = i[j][i[j].index(m)+1]
                             dj['page_url'] = m
                             search_results.append(dj)

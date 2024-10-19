@@ -15,7 +15,7 @@ To get started with **Search-with-gpt**, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/Search-with-gpt.git
+   git clone https://github.com/avijitbhuin21/Search-With-GPT.git
    ```
 2. Navigate to the project directory:
    ```bash
@@ -34,7 +34,7 @@ You can access and use **Search-with-gpt** right now at the following URL:
 To run the application locally, execute the following command in your terminal:
 
 ```bash
-python search_with_gpt.py
+python streamlit streamlit_app.py
 ```
 
 Follow the on-screen instructions to input your search queries and preferences.

@@ -1,3 +1,5 @@
+```Generated Using CHAT-GPT```
+
 # Search-with-gpt
 
 **Search-with-gpt** is an innovative weekend project that leverages the power of Large Language Models (LLMs) to enhance web search capabilities. This tool is designed to facilitate research by crawling through webpages, collecting relevant data, and presenting it in a structured report format. In addition to textual data, **Search-with-gpt** also supports media searches, including images and videos, making it a comprehensive solution for information retrieval.

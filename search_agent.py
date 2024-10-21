@@ -52,7 +52,7 @@ class Research_Tool:
             return ("", result)
         except requests.RequestException as e:
             try:
-                return self.scrape_page(url=url, header_disabled=True)
+                return self.scrape_page(url=url, header_disabled=True, timeout=5)
             except:
                 print(f"Error scraping {url}: {str(e)}")
                 return None

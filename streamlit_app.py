@@ -12,7 +12,6 @@ organizer = Organizer()
 
 async def main():
     st.set_page_config(layout="centered", page_title="Search-With-GPT")
-    st.session_state.Searching_mode = "quick_search"
     st.session_state.SearchEngineStatus = False
     st.session_state.Decision = False
     st.session_state.crawl_status = False

@@ -8,10 +8,97 @@ from streamlit_image_gallery import streamlit_image_gallery
 
 organizer = Organizer()
 
-
+def load_css():
+    st.markdown("""
+    <style>
+        /* Main background and text colors */
+        .stApp {
+            background-color: #0E1117;
+            color: #E0E0E0;
+        }
+        
+        /* Header styling */
+        .stHeader {
+            background-color: #1E1E1E;
+            padding: 2rem 0;
+            border-bottom: 1px solid #2D2D2D;
+        }
+        
+        /* Search input styling */
+        .stTextInput > div > div > input {
+            background-color: #262730;
+            color: #FFFFFF;
+            border: 1px solid #4B4B4B;
+            border-radius: 8px;
+            padding: 12px 20px;
+        }
+        
+        /* Button styling */
+        .stButton > button {
+            background-color: #4C4CFF;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .stButton > button:hover {
+            background-color: #3939FF;
+            box-shadow: 0 4px 12px rgba(76, 76, 255, 0.3);
+        }
+        
+        /* Secondary button */
+        .stButton > button[kind="secondary"] {
+            background-color: #2D2D2D;
+            border: 1px solid #4B4B4B;
+        }
+        
+        .stButton > button[kind="secondary"]:hover {
+            background-color: #3D3D3D;
+        }
+        
+        /* Expander styling */
+        .streamlit-expanderHeader {
+            background-color: #1E1E1E;
+            border: 1px solid #2D2D2D;
+            border-radius: 6px;
+        }
+        
+        /* JSON display */
+        .stJson {
+            background-color: #262730 !important;
+            border: 1px solid #4B4B4B !important;
+            border-radius: 6px;
+        }
+        
+        /* Spinner */
+        .stSpinner > div {
+            border-color: #4C4CFF transparent transparent !important;
+        }
+        
+        /* Checkbox */
+        .stCheckbox > label {
+            color: #E0E0E0 !important;
+        }
+        
+        /* Image gallery */
+        .image-gallery {
+            background-color: #1E1E1E;
+            border-radius: 8px;
+            padding: 1rem;
+        }
+        
+        /* Markdown text */
+        .stMarkdown {
+            color: #E0E0E0;
+        }
+    </style>
+    """, unsafe_allow_html=True)
 
 async def main():
     st.set_page_config(layout="centered", page_title="Search-With-GPT")
+    load_css()
     st.session_state.SearchEngineStatus = False
     st.session_state.Decision = False
     st.session_state.crawl_status = False
@@ -140,7 +227,7 @@ async def main():
 
 
     with toogle:
-        status = st.checkbox("Research Mode (Takes 35sec - Several Minutes)")
+        status = st.checkbox("Research Mode", help="Takes 35sec - Several Minutes")
         if status:
             st.session_state.Searching_mode = "research"
         if not status:
@@ -167,6 +254,5 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-
 
 
